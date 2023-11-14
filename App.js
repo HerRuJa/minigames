@@ -4,23 +4,28 @@ import Head from './src/components/Head';
 import Body from './src/components/Body';
 import { useState } from 'react';
 import color from './src/utils/color';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
+  const [score, setScore] = useState(0)
   const [menu, setMenu] = useState(true)
   const [juego, setJuego] = useState(0)
   function verForm(){
     setMenu(true)
     setJuego(0)
+    setScore(0)
     console.log(menu)
   }
   return (
-    <View style={styles.container}>
+
+      <GestureHandlerRootView style={styles.container}>
         <Head verForm={verForm}/>
         <Body 
         menu={menu} setMenu={setMenu}
         juego={juego} setJuego={setJuego}
+        score={score} setScore={setScore}
         />
-    </View>
+    </GestureHandlerRootView>
   );
 }
 

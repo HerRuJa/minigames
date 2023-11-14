@@ -7,11 +7,12 @@ import Mando from './Mando'
 
 
 export default function Body(props) {
-    const {menu,setMenu,juego,setJuego} = props
+    const {menu,setMenu,juego,setJuego, score, setScore} = props
   return (
     <View style={styles.container}>
-      { menu ? <Form juego={juego} setJuego={setJuego} setMenu={setMenu}/> : <Card />}
-        {juego === 1 ?  <Mando /> : null}
+      
+      { menu ? <Form juego={juego} setJuego={setJuego} setMenu={setMenu}/> : <Card score={score} setScore={setScore} />}
+        
     </View>
   )
 }
