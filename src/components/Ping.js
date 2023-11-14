@@ -186,6 +186,8 @@ export default function Ping(props) {
 //     )
 //   }),[score]);
 
+
+
   const gesture = useAnimatedGestureHandler({
     onStart: (event) => {
 
